@@ -20,7 +20,7 @@ app.use("/customer/auth/*", function auth(req, res, next) {
       if (err) {
         return res.status(401).send({ message: 'Failed to authenticate token.' });
       }
-      // 如果一切都好，保存到請求用於在其他路由中使用
+
       req.userId = decoded.id;
       req.username = decoded.username;
       next();
